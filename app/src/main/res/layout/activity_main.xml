@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/backgroundSurface"
+    tools:context=".MainActivity">
+
+    //header text
+    <TextView
+        android:id="@+id/graphTextHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="Graph Chart"
+        android:textSize="20sp"
+        android:textColor="@color/textHeaderColor"
+        android:gravity="center_vertical"
+        />
+
+    //card view for showing the graph chart
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/graphCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/graphTextHeader"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:elevation="5dp"
+        android:padding="16dp"
+        app:cardCornerRadius="5dp">
+
+        
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
