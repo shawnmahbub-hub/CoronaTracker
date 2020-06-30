@@ -6,13 +6,14 @@
 
     <color name="textHeaderColor">#6200EE</color>
     <color name="backgroundSurface">#ffffff</color>
+    <color name="primaryTextOnSurface">#121212</color>
 
     <color name="color_one">#fb7268</color>
     <color name="color_white">#ededf2</color>
     <color name="color_two">#E3E0E0</color>
 
-    <color name="cases">#FFA726</color>
-    <color name="recovered">#66BB6A</color>
-    <color name="deaths">#EF5350</color>
-    <color name="active">#29B6F6</color>
+    <color name="cases">#2B008C</color>
+    <color name="recovered">#5509EC</color>
+    <color name="deaths">#834BF1</color>
+    <color name="active">#A98BE4</color>
 </resources>

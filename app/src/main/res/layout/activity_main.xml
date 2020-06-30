@@ -8,18 +8,19 @@
     android:background="@color/backgroundSurface"
     tools:context=".MainActivity">
 
-    //header text
+    //header text for graph chart
     <TextView
         android:id="@+id/graphTextHeader"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:text="Graph Chart"
         android:textSize="20sp"
         android:textColor="@color/textHeaderColor"
-        android:gravity="center_vertical"
+        android:drawableStart="@drawable/ic_graph"
+        android:drawablePadding="8dp"
         />
 
     //card view for showing the graph chart
@@ -29,8 +30,10 @@
         android:layout_height="180dp"
         android:layout_marginTop="16dp"
         android:layout_below="@+id/graphTextHeader"
-        app:cardElevation="2dp"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="#F7F7F7"
+        android:elevation="@dimen/cardview_default_elevation"
+        >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -42,105 +45,146 @@
                     android:id="@+id/piechart"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:padding="6dp"
                     android:layout_weight="1"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="16dp"
                     />
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:layout_marginLeft="20dp"
                     android:orientation="vertical"
-                    android:gravity="center_vertical">
+                    android:layout_margin="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingStart="12dp"
+                    >
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
-                        android:gravity="center_vertical">
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        >
+
                         <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorPrimaryDark"/>
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@color/cases" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="Total Cases"
-                            android:paddingLeft="10dp"/>
+                            android:textColor="@color/primaryTextOnSurface"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="8dp"
+                        >
+
                         <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/recovered"/>
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@color/recovered" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="Recovered"
-                            android:paddingLeft="10dp"/>
+                            android:textColor="@color/primaryTextOnSurface"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="8dp"
+                        >
+
                         <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/deaths"/>
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@color/deaths" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Deaths"
-                            android:paddingLeft="10dp"/>
+                            android:layout_marginStart="8dp"
+                            android:text="Total Deaths"
+                            android:textColor="@color/primaryTextOnSurface"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="8dp"
+                        >
+
                         <View
-                            android:layout_width="15dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/active"/>
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@color/active" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Active"
-                            android:paddingLeft="10dp"/>
+                            android:layout_marginStart="8dp"
+                            android:text="Active Cases"
+                            android:textColor="@color/primaryTextOnSurface"
+                            android:textSize="18sp" />
 
                     </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
+    //header text for global status
+    <TextView
+        android:id="@+id/globalTextHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardViewGraph"
+        android:layout_alignStart="@+id/cardViewGraph"
+        android:layout_alignEnd="@+id/cardViewGraph"
+        android:layout_marginTop="16dp"
+        android:text="Global Statistics"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:drawableStart="@drawable/ic_global"
+        android:drawablePadding="8dp"
+        />
+
+    //card view for showing the global states
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/cardViewGraph"
+        android:layout_below="@+id/globalTextHeader"
         android:layout_above="@+id/btnTrack"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        app:cardElevation="2dp"
-        app:cardCornerRadius="10dp"
+        android:background="#F7F7F7"
+        app:cardCornerRadius="8dp"
+        android:elevation="@dimen/cardview_default_elevation"
         >
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#99F7F7F7"
             >
             <com.leo.simplearcloader.SimpleArcLoader
-                android:visibility="visible"
+                android:visibility="gone"
                 android:id="@+id/loader"
                 android:layout_centerInParent="true"
                 android:layout_width="60dp"
@@ -153,79 +197,58 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/scrollStats"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="global stats"
-                        android:textAllCaps="true"
-                        android:textSize="28sp"
-                        android:textStyle="bold"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="20dp"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/color_two"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginTop="5dp"/>
-
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_margin="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:text="Cases"
+                            android:textColor="@color/primaryTextOnSurface"
                             android:textSize="18sp"/>
+
                         <TextView
+                            android:id="@+id/tvCases"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="sans-serif"
                             android:text="0"
-                            android:id="@+id/tvCases"
                             android:textAlignment="textEnd"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:textColor="@color/colorAccent"
                             android:textSize="18sp"
-
-                            android:textColor="@color/color_one"
-                            android:textStyle="bold"
-                            android:fontFamily="sans-serif-light"
-                            android:layout_alignParentRight="true"/>
+                            android:textStyle="bold" />
 
                     </RelativeLayout>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/color_two"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
                         />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_margin="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-light"
-                            android:text="Recovored"
+                            android:fontFamily="sans-serif"
+                            android:text="Recovered"
+                            android:textColor="@color/primaryTextOnSurface"
                             android:textSize="18sp"/>
                         <TextView
                             android:layout_width="fill_parent"
@@ -234,9 +257,9 @@
                             android:id="@+id/tvRecovered"
                             android:textAlignment="textEnd"
                             android:textSize="18sp"
-                            android:textColor="@color/color_one"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:layout_alignParentRight="true"/>
 
                     </RelativeLayout>
@@ -244,22 +267,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/color_two"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
                         />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_margin="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:text="Critical"
+                            android:textColor="@color/primaryTextOnSurface"
                             android:textSize="18sp"/>
                         <TextView
                             android:layout_width="fill_parent"
@@ -268,10 +289,9 @@
                             android:id="@+id/tvCritical"
                             android:textAlignment="textEnd"
                             android:textSize="18sp"
-
-                            android:textColor="@color/color_one"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:layout_alignParentRight="true"/>
 
                     </RelativeLayout>
@@ -279,22 +299,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/color_two"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
                         />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_margin="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:text="Active"
+                            android:textColor="@color/primaryTextOnSurface"
                             android:textSize="18sp"/>
                         <TextView
                             android:layout_width="fill_parent"
@@ -303,10 +321,9 @@
                             android:id="@+id/tvActive"
                             android:textAlignment="textEnd"
                             android:textSize="18sp"
-
-                            android:textColor="@color/color_one"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:layout_alignParentRight="true"/>
 
                     </RelativeLayout>
@@ -314,22 +331,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/color_two"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
                         />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_margin="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:text="Today Cases"
+                            android:textColor="@color/primaryTextOnSurface"
                             android:textSize="18sp"/>
                         <TextView
                             android:layout_width="fill_parent"
@@ -338,10 +353,9 @@
                             android:id="@+id/tvTodayCases"
                             android:textAlignment="textEnd"
                             android:textSize="18sp"
-
-                            android:textColor="@color/color_one"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:layout_alignParentRight="true"/>
 
                     </RelativeLayout>
@@ -349,22 +363,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/color_two"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
                         />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_margin="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:text="Total Deaths"
+                            android:textColor="@color/primaryTextOnSurface"
                             android:textSize="18sp"/>
                         <TextView
                             android:layout_width="fill_parent"
@@ -373,10 +385,9 @@
                             android:id="@+id/tvTotalDeaths"
                             android:textAlignment="textEnd"
                             android:textSize="18sp"
-
-                            android:textColor="@color/color_one"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:layout_alignParentRight="true"/>
 
                     </RelativeLayout>
@@ -384,22 +395,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/color_two"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
                         />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_margin="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:text="Today Deaths"
+                            android:textColor="@color/primaryTextOnSurface"
                             android:textSize="18sp"/>
                         <TextView
                             android:layout_width="fill_parent"
@@ -408,10 +417,9 @@
                             android:id="@+id/tvTodayDeaths"
                             android:textAlignment="textEnd"
                             android:textSize="18sp"
-
-                            android:textColor="@color/color_one"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:layout_alignParentRight="true"/>
 
                     </RelativeLayout>
@@ -419,22 +427,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/color_two"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
                         />
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp">
+                        android:layout_margin="16dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:text="Affected Countries"
+                            android:textColor="@color/primaryTextOnSurface"
                             android:textSize="18sp"/>
                         <TextView
                             android:layout_width="fill_parent"
@@ -443,19 +449,12 @@
                             android:id="@+id/tvAffectedCountries"
                             android:textAlignment="textEnd"
                             android:textSize="18sp"
-                            android:textColor="@color/color_one"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
-                            android:fontFamily="sans-serif-light"
+                            android:fontFamily="sans-serif"
                             android:layout_alignParentRight="true"/>
 
                     </RelativeLayout>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/color_two"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        />
 
                 </LinearLayout>
 
@@ -465,6 +464,7 @@
 
         </androidx.cardview.widget.CardView>
 
+    //button for going to the country list activity
     <Button
             android:id="@+id/btnTrack"
             android:layout_width="match_parent"
