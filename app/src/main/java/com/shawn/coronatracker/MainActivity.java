@@ -2,6 +2,7 @@ package com.shawn.coronatracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.leo.simplearcloader.SimpleArcLoader;
+import com.shawn.coronatracker.R;
 
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         //creating JSON object
                         try {
-                            JSONObject jsonObject=new JSONObject(response.toString());
+                            JSONObject jsonObject=new JSONObject(response);
 
                             /*replace the components text fetched from the
                             * REST API in JSON format*/
@@ -113,5 +115,9 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue=Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
 
+    }
+
+    public void goCountryList(View view){
+        startActivity(new Intent(getApplicationContext(),CountryListActivity.class));
     }
 }

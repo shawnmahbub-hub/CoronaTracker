@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountryListActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/editTextCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        android:elevation="@dimen/cardview_default_elevation"
+        >
+
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/edittext_shadow"
+            android:drawableLeft="@drawable/ic_search_black_24dp"
+            android:drawablePadding="16dp"
+            android:paddingLeft="16dp"
+            android:hint="Search"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:layout_gravity="center_vertical"
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/editTextCard"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <com.leo.simplearcloader.SimpleArcLoader
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/loader"
+        app:arc_style="simple_arc"
+        android:visibility="visible"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

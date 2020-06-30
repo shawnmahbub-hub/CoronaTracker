@@ -184,7 +184,7 @@
             android:background="#99F7F7F7"
             >
             <com.leo.simplearcloader.SimpleArcLoader
-                android:visibility="gone"
+                android:visibility="visible"
                 android:id="@+id/loader"
                 android:layout_centerInParent="true"
                 android:layout_width="60dp"
@@ -465,16 +465,19 @@
         </androidx.cardview.widget.CardView>
 
     //button for going to the country list activity
+
     <Button
-            android:id="@+id/btnTrack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/button_bg"
-            android:text="Track countries"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:padding="5dp"
-            />
+        android:id="@+id/btnTrack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_bg"
+        android:onClick="goCountryList"
+        android:padding="5dp"
+        android:text="Track countries"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
 </RelativeLayout>
